@@ -3,6 +3,7 @@ $secondary-color: #eece1a;
 $show-home-image: true;
 $home-image: url(../images/background.jpeg);
 $portrait-image: url(../images/seriousme.JPG);
+$portrait-image-small: url(../images/seriousme_small.JPG);
 $background-opacity: 0.8;
 
 $main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -29,5 +30,31 @@ $main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background: rgba($primary-color, $background-opacity);
       }
     }
+  }
+}
+
+//Media queries
+@mixin mediaSmall {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMedium {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLarge {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+
+}
+
+@mixin mediaXLarge {
+  @media screen and (min-width: 1171px) {
+    @content;
   }
 }
