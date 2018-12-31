@@ -33,6 +33,15 @@ $main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 }
 
+//Text color mixin
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
 //Media queries
 @mixin mediaSmall {
   @media screen and (max-width: 500px) {

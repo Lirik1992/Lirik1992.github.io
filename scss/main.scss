@@ -9,7 +9,7 @@
 body {
   @include backgrond;
   background: $primary-color;
-  color: #fff;
+  color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
   font-family: $main-font;
@@ -70,4 +70,64 @@ main {
       margin-top: 20vh;
     }
   }
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+  'bioimage bio bio'
+  'job-1 job-2 skill-set';
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bio-image {
+  grid-area: bioimage;
+  margin: auto;
+  border-radius: 50%;
+  border: $secondary-color 3px solid;
+}
+
+.bio {
+  grid-area: bio
+}
+
+.job-info {
+  grid-area: job-info
+}
+
+.skills-info {
+  grid-area: skills-info;
+  display: flex;
+  flex-direction: column;
+}
+
+
+//Progress bars
+#first-skill-bar {
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+#second-skill-bar {
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+#third-skill-bar {
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+#forth-skill-bar {
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+  position: relative;
 }

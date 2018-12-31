@@ -181,3 +181,50 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'bioimage bio bio' 'job-1 job-2 skill-set';
+  grid-template-columns: repeat(3, 1fr); }
+
+.bio-image {
+  grid-area: bioimage;
+  margin: auto;
+  border-radius: 50%;
+  border: #eece1a 3px solid; }
+
+.bio {
+  grid-area: bio; }
+
+.job-info {
+  grid-area: job-info; }
+
+.skills-info {
+  grid-area: skills-info;
+  display: flex;
+  flex-direction: column; }
+
+#first-skill-bar {
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+  position: relative; }
+
+#second-skill-bar {
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+  position: relative; }
+
+#third-skill-bar {
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+  position: relative; }
+
+#forth-skill-bar {
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+  position: relative; }
