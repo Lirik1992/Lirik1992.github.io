@@ -92,35 +92,6 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-  ul.menu-nav, div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-nav.show, div.menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px; }
-  .menu-branding {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-branding .portrait {
-      background: url(../images/seriousme_small.JPG) cover;
-      width: 130px;
-      height: 130px; } }
-
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; } }
-
 * {
   box-sizing: border-box; }
 
@@ -145,12 +116,18 @@ body {
       z-index: -1;
       background: rgba(68, 68, 68, 0.8); }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   font-weight: 400; }
-  h1.lg-heading, h2.lg-heading, h3.lg-heading {
+  h1.lg-heading,
+  h2.lg-heading,
+  h3.lg-heading {
     font-size: 6rem; }
-  h1.sm-heading, h2.sm-heading, h3.sm-heading {
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(73, 73, 73, 0.5); }
@@ -169,7 +146,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%; }
+  min-height: calc(100vh - 60px); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -185,46 +162,120 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'job-1 job-2 skill-set';
+  grid-template-areas: "bioimage bio bio" "job-1 job-2 skills-set";
   grid-template-columns: repeat(3, 1fr); }
+  .about-info .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: #eece1a 3px solid; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem; }
+  .about-info .job-1 {
+    grid-area: job-1; }
+  .about-info .job-2 {
+    grid-area: job-2; }
+  .about-info .skills-set {
+    grid-area: skills-set; }
+    .about-info .skills-set .skillbar {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 20px 0; }
+      .about-info .skills-set .skillbar .skill-percentage {
+        background: black;
+        padding: 4px;
+        box-sizing: border-box;
+        border: 1px solid #eece1a;
+        border-radius: 6px; }
+        .about-info .skills-set .skillbar .skill-percentage .skill-level {
+          background: #eece1a;
+          width: 100%;
+          height: 10px;
+          border-radius: 6px; }
+      .about-info .skills-set .skillbar p {
+        color: #fff;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-align: left; }
+        .about-info .skills-set .skillbar p:nth-child(2) {
+          float: right;
+          position: relative;
+          top: -1.4375rem; }
+  .about-info .job {
+    background: #515151;
+    padding: 0.5rem;
+    border-bottom: #eece1a 5px solid; }
 
-.bio-image {
-  grid-area: bioimage;
-  margin: auto;
-  border-radius: 50%;
-  border: #eece1a 3px solid; }
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(2, 1fr); }
+  .projects img {
+    width: 100%;
+    border: 3px #fff solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #eece1a;
+      transition: all 0.5s ease-out; }
 
-.bio {
-  grid-area: bio; }
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #eece1a;
+    color: #000; }
 
-.job-info {
-  grid-area: job-info; }
+.btn-dark {
+  background: black;
+  color: #fff; }
 
-.skills-info {
-  grid-area: skills-info;
-  display: flex;
-  flex-direction: column; }
+.btn-light {
+  background: #c4c4c4;
+  color: #333; }
 
-#first-skill-bar {
-  margin: 20px;
-  width: 40px;
-  height: 40px;
-  position: relative; }
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  color: #fff;
+  height: 60px; }
 
-#second-skill-bar {
-  margin: 20px;
-  width: 40px;
-  height: 40px;
-  position: relative; }
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav, div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show, div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url(../images/seriousme_small.JPG) cover;
+      width: 130px;
+      height: 130px; }
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'job-1' 'job-2' 'skills-set';
+    grid-template-columns: 1fr; } }
 
-#third-skill-bar {
-  margin: 20px;
-  width: 40px;
-  height: 40px;
-  position: relative; }
-
-#forth-skill-bar {
-  margin: 20px;
-  width: 40px;
-  height: 40px;
-  position: relative; }
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; }
+  .projects {
+    grid-template-columns: 1fr; } }

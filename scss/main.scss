@@ -1,6 +1,5 @@
-@import 'config';
-@import 'menu';
-@import 'mobile';
+@import "config";
+@import "menu";
 
 * {
   box-sizing: border-box;
@@ -16,7 +15,9 @@ body {
   line-height: 1.5;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   font-weight: 400;
 
@@ -48,7 +49,8 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  // height: 100%;
+  min-height: calc(100vh - 60px);
 
   .icons {
     margin-top: 1rem;
@@ -72,62 +74,132 @@ main {
   }
 }
 
+// About page
 .about-info {
   display: grid;
   grid-gap: 30px;
   grid-template-areas:
-  'bioimage bio bio'
-  'job-1 job-2 skill-set';
+    "bioimage bio bio"
+    "job-1 job-2 skills-set";
   grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+
+  .job-1 {
+    grid-area: job-1;
+  }
+
+  .job-2 {
+    grid-area: job-2;
+  }
+
+  .skills-set {
+    grid-area: skills-set;
+
+    .skillbar {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 20px 0;
+
+      .skill-percentage {
+        background: darken($primary-color, 100);
+        padding: 4px;
+        box-sizing: border-box;
+        border: 1px solid $secondary-color;
+        border-radius: 6px;
+
+        .skill-level {
+          background: $secondary-color;
+          width: 100%;
+          height: 10px;
+          border-radius: 6px;
+        }
+      }
+
+      p {
+        color: set-text-color($primary-color);
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-align: left;
+
+        &:nth-child(2) {
+          float: right;
+          position: relative;
+          top: -1.4375rem;
+        }
+      }
+    }
+  }
+
+  .job {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
 }
 
-.bio-image {
-  grid-area: bioimage;
-  margin: auto;
-  border-radius: 50%;
-  border: $secondary-color 3px solid;
+// Work page
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
 }
 
-.bio {
-  grid-area: bio
+// Button styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
 }
 
-.job-info {
-  grid-area: job-info
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
 }
 
-.skills-info {
-  grid-area: skills-info;
-  display: flex;
-  flex-direction: column;
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
 }
 
-
-//Progress bars
-#first-skill-bar {
-  margin: 20px;
-  width: 40px;
-  height: 40px;
-  position: relative;
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
 }
 
-#second-skill-bar {
-  margin: 20px;
-  width: 40px;
-  height: 40px;
-  position: relative;
-}
-
-#third-skill-bar {
-  margin: 20px;
-  width: 40px;
-  height: 40px;
-  position: relative;
-}
-
-#forth-skill-bar {
-  margin: 20px;
-  width: 40px;
-  height: 40px;
-  position: relative;
-}
+@import "mobile";

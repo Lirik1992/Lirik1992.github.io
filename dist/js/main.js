@@ -33,37 +33,4 @@ document.addEventListener('DOMContentLoaded', function() {
       showMenu = false;
     }
   }
-
-  let progressBars = ['#first-skill-bar', '#second-skill-bar', '#third-skill-bar', '#forth-skill-bar'];
-
-  progressBars.forEach(item => {
-    //Progress bars
-    let bar = new ProgressBar.Circle(item, {
-      color: '#FFEA82',
-      trailColor: '#eee',
-      trailWidth: 1,
-      duration: 1400,
-      easing: 'bounce',
-      strokeWidth: 6,
-      from: {color: '#eece1a', a:0},
-      to: {color: '#ff2200', a:1},
-      // Set default step function for all animate calls
-      step: function(state, circle) {
-        circle.path.setAttribute('stroke', state.color);
-      }
-    });
-    
-    if (item === '#first-skill-bar') {
-      bar.animate(0.85);
-    }
-    if (item === '#second-skill-bar') {
-      bar.animate(0.80);
-    }
-    if (item === '#third-skill-bar') {
-      bar.animate(0.95);
-    }
-    if (item === '#forth-skill-bar') {
-      bar.animate(0.5);
-    }
-  })
 });

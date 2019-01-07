@@ -10,8 +10,6 @@
   "author": "Dmitry Likharev",
   "license": "MIT",
   "dependencies": {
-    "node-sass": "^4.11.0",
-    "npm-require": "^1.3.0",
-    "progressbar.js": "^1.0.1"
+    "node-sass": "^4.11.0"
   }
 }
