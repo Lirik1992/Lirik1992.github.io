@@ -1,15 +1,15 @@
 //Wide screens
 @include mediaXLarge {
-  // .projects {
-  //   grid-template-columns: repeat(4, 1fr);
-  // }
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 //Desktops & Laptops
 @include mediaLarge {
-  // .projects {
-  //   grid-template-columns: repeat(3, 1fr);
-  // }
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 //Tablets & Small Laptops

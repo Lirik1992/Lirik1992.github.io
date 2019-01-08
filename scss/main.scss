@@ -161,6 +161,8 @@ main {
 
   img {
     width: 100%;
+    min-height: 200px;
+    max-height: 250px;
     border: 3px #fff solid;
 
     &:hover {

@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Portfolio website",
   "main": "index.js",
-  "homepage": "https://lirik1992.github.io/portfolio_web",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
@@ -12,7 +11,6 @@
   "author": "Dmitry Likharev",
   "license": "MIT",
   "dependencies": {
-    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0"
   }
 }

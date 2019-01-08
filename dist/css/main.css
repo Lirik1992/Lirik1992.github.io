@@ -218,6 +218,8 @@ main {
   grid-template-columns: repeat(2, 1fr); }
   .projects img {
     width: 100%;
+    min-height: 200px;
+    max-height: 250px;
     border: 3px #fff solid; }
     .projects img:hover {
       opacity: 0.5;
@@ -266,6 +268,14 @@ main {
   background: #2b2b2b;
   color: #fff;
   height: 60px; }
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
