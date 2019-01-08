@@ -219,7 +219,7 @@ main {
   .projects img {
     width: 100%;
     min-height: 200px;
-    max-height: 250px;
+    max-height: 300px;
     border: 3px #fff solid; }
     .projects img:hover {
       opacity: 0.5;
@@ -303,7 +303,9 @@ main {
       height: 130px; }
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'job-1' 'job-2' 'skills-set';
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
